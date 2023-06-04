@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Neurona Artificial</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      width: 400px;
+      padding: 20px;
+      background-color: #ffffff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+    }
+
+    h1, h2 {
+      text-align: center;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box; /* Añadimos box-sizing */
+    }
+
+    button[type="submit"] {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      border-radius: 4px;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    #result, #learned-parameters {
+      text-align: center;
+    }
+
+    /* Añadimos estilos para centrar los inputs */
+    #inputs-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    #inputs-list li {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #inputs-list label,
+    #inputs-list input {
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Neurona Artificial</h1>
+
+    <form id="input-form">
+      <label for="learning-rate">Factor de aprendizaje:</label>
+      <input type="number" step="0.01" id="learning-rate" required>
+
+      <ul id="inputs-list">
+        <li>
+          <label for="input-0">X1:</label>
+          <input type="number" step="0.01" id="input-0" required>
+        </li>
+        <li>
+          <label for="input-1">x2:</label>
+          <input type="number" step="0.01" id="input-1" required>
+        </li>
+        <li>
+          <label for="input-2">Valor:</label>
+          <input type="number" step="0.01" id="input-2" required>
+        </li>
+        <!--li>
+          <label for="input-3">Idiomas:</label>
+          <input type="number" step="0.01" id="input-3" required>
+        </!--li-->
+      </ul>
+
+      <label for="target">Etiqueta de clase (1 para aprobar, 0 para no aprobar):</label>
+      <input type="number" step="1" min="0" max="1" id="target" required>
+
+      <button type="submit">Calcular</button>
+    </form>
+
+    <h2>Resultado:</h2>
+    <p id="result"></p>
+
+    <h2>Parámetros aprendidos:</h2>
+    <ul id="learned-parameters"></ul>
+    <script src="script.js"></script>
+  </div>
+</body>
+</html>
